@@ -91,24 +91,32 @@
         /* Hero */
         .hero {
             position: relative;
-            min-height: 70vh;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/campus-photo.png') center/cover no-repeat;
+            min-height: 100vh;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://bitmesra.ac.in/UploadedDocuments/user_adminnoida/Header/Header080a3d48bfe04f9c80614094052f99b2_WhatsApp%20Image%202025-05-30%20at%2011.16.39.jpeg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: #fff;
-            padding: 4rem 2vw 3rem 2vw;
+            padding: 0;
+            margin: 0;
         }
 
         .hero-content {
+            width: 100%;
             max-width: 600px;
             margin: 0 auto;
             background: rgba(30, 58, 42, 0.15);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            padding: 2.5rem 2rem 2.5rem 2rem;
+            padding: 2.5rem 2rem;
             animation: fadeIn 1s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto;
         }
 
         .hero h1 {
@@ -255,6 +263,11 @@
             padding: 2.5rem 2vw;
         }
 
+        .collab p {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
         .collab-logo {
             height: 54px;
             margin-bottom: 1rem;
@@ -337,38 +350,53 @@
             border-spacing: 0;
             margin: 2rem 0 1.5rem 0;
             background: #fff;
-            border-radius: 12px;
-            overflow: auto;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(30, 58, 42, 0.10);
+            border: 1.5px solid #e0e0e0;
         }
 
         .fee-table th,
         .fee-table td {
             padding: 1.1rem 0.7rem;
             text-align: center;
-            font-size: 1.01rem;
+            font-size: 1.05rem;
+            border-bottom: 1px solid #e0e0e0;
+            border-right: 1px solid #e0e0e0;
         }
 
         .fee-table th {
-            background: var(--primary);
+            background: #1E3A2A;
             color: #fff;
             font-weight: 700;
+            border-right: 1px solid #e0e0e0;
+            border-bottom: 2px solid #1E3A2A;
+        }
+
+        .fee-table th:last-child,
+        .fee-table td:last-child {
+            border-right: none;
+        }
+
+        .fee-table tr:last-child td {
+            border-bottom: none;
         }
 
         .fee-table tr:nth-child(even) {
             background: #f7fafd;
         }
 
-        .fee-table tr:nth-child(odd) {
-            background: #fff;
-        }
-
-        .fee-table .fee-highlight,
         .fee-table tr.fee-highlight td {
             font-weight: bold;
-            color: var(--cta);
+            color: #ff7f50;
             background: #f7fafd;
             font-size: 1.1rem;
+            border-bottom: none;
+        }
+
+        .fee-table tbody tr:hover {
+            background: #e6f7f1;
+            transition: background 0.2s;
         }
 
         .fee-note {
@@ -485,6 +513,10 @@
                 text-align: center;
             }
 
+            .collab p {
+                text-align: center;
+            }
+
             .career-grid,
             .contact-grid {
                 grid-template-columns: 1fr 1fr;
@@ -553,9 +585,16 @@
                 font-size: 1em;
             }
 
+            .hero {
+                min-height: 100vh;
+                height: 100vh;
+                padding: 0;
+            }
+
             .hero-content {
-                padding: 5.5em 1.2em 2.5em 1.2em;
-                text-align: center;
+                padding: 1.5rem 1vw;
+                min-height: 100vh;
+                justify-content: center;
             }
 
             .hero-content h2 {
@@ -685,6 +724,48 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        .cta-row {
+            display: flex;
+            gap: 1.1em;
+            justify-content: center;
+            margin-top: 1.2em;
+
+        }
+
+        .cta-row .cta-btn,
+        .cta-row .cta-btn.secondary-btn {
+            width: auto;
+            min-width: 150px;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .cta-row {
+                flex-direction: column;
+                gap: 0.9em;
+                margin-top: 3em;
+            }
+
+            .cta-row .cta-btn,
+            .cta-row .cta-btn.secondary-btn {
+                width: auto;
+                min-width: 150px;
+                padding: 15px;
+            }
+        }
+
+        .eligibility-section {
+            background: #fff;
+            border-radius: 18px;
+            padding: 2.2rem 2vw;
+            margin: 2.5rem auto;
+            color: #1e3a2a;
+            font-size: 1.08rem;
+            max-width: 700px;
+            box-shadow: 0 4px 24px rgba(30, 58, 42, 0.08);
+            text-align: left;
+        }
     </style>
 </head>
 
@@ -698,8 +779,8 @@
             <a href="#about">About</a>
             <a href="#collab">Collaboration</a>
             <a href="#features">Features</a>
-            <a href="#fee">Fee</a>
-            <a href="#career">Careers</a>
+            <a href="#fee">Fee Structure</a>
+            <a href="#career">Career Prospects</a>
             <a href="#contact">Contact</a>
         </nav>
         <button class="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
@@ -709,10 +790,12 @@
             <h1>Gateway to your Journey from <br>Ledgers to Leadership</h1>
             <h2>B.Com (Honours/Honours with Research) with Discipline Specific Electives in Financial Analysis</h2>
             <div class="tagline">In Collaboration with NSE Academy Ltd.</div>
-            <a href="https://bitmesra.ac.in/Show_Brochure_Details/93/93" target="_blank" class="cta-btn">Start Your
-                Application</a>
-            <a href="https://drive.google.com/file/d/1QDB4btPnf_auvLjtMP0vWkiMek35V3wr/view?usp=sharing" target="_blank"
-                class="cta-btn secondary-btn" download>Download Brochure</a>
+            <div class="cta-row">
+                <a href="https://bitmesra.ac.in/Show_Brochure_Details/93/93" target="_blank" class="cta-btn">Start Your
+                    Application</a>
+                <a href="https://drive.google.com/file/d/1QDB4btPnf_auvLjtMP0vWkiMek35V3wr/view?usp=sharing"
+                    target="_blank" class="cta-btn secondary-btn" download>Download Brochure</a>
+            </div>
         </div>
     </section>
     <main>
@@ -762,6 +845,10 @@
                 <li><span class="tick"><i class="fas fa-check-circle"></i></span>Mentoring and career counselling
                     throughout the program</li>
             </ul>
+        </section>
+        <section class="eligibility-section">
+            <strong>Eligibility:</strong> Candidates must have passed Class 12* / Equivalent Qualifying Examination with
+            minimum 50% (45% for SC/ST/PwD) marks with English as a subject in the qualifying examination.
         </section>
         <section class="fee-section" id="fee">
             <h2>Fee Structure</h2>
@@ -834,7 +921,7 @@
                 Caution Money: ₹10,000 (Refundable)
             </div>
             <div class="fee-note">
-                Degree after 3 years – ₹3.35 Lakhs; Research after 4 years – ₹4.52 Lakhs
+                Degree after 3 years – ₹3.35 Lakhs <br><br> Honours/Honours Research after 4 years – ₹4.52 Lakhs
             </div>
         </section>
         <section class="career" id="career">
@@ -877,7 +964,7 @@
                     <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
                     <div>Address</div>
                     <div>A-7, Sector 1, Noida – 201301 (U.P.)</div>
-                    <a href="https://bitmesra.ac.in" target="_blank">bitmesra.ac.in</a>
+                    <a href="https://bitmesra.ac.in" target="_blank">www.bitmesra.ac.in</a>
                 </div>
             </div>
             <div class="contact-social">
