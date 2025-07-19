@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B.Com Admissions 2025–26 | Birla Institute of Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1E3A2A;
+            --accent: #E6E6FA;
+            --cta: #FF7F50;
+            --bg: #f8f8fc;
+            --lavender: #f3f2fa;
+            --shadow: 0 4px 24px rgba(30, 58, 42, 0.08);
+            --radius: 18px;
+            --transition: 0.2s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #fff;
+            box-shadow: var(--shadow);
+            padding: 0 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-title img {
+            height: 44px;
+            width: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .logo-title span {
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--cta);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            min-height: 70vh;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/campus-photo.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 4rem 2vw 3rem 2vw;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(30, 58, 42, 0.15);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem 2rem 2.5rem 2rem;
+            animation: fadeIn 1s;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.7rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .cta-btn {
+            background: var(--cta);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 30px;
+            padding: 1rem 2.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(255, 127, 80, 0.13);
+            transition: transform 0.18s, box-shadow 0.18s;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.06);
+            box-shadow: 0 8px 32px rgba(255, 127, 80, 0.18);
+        }
+
+        /* Add this to the <style> section for .secondary-btn styling */
+        .cta-btn.secondary-btn {
+            background: #fff;
+            color: #1e3a2a;
+            border: 2px solid #1e3a2a;
+            margin-left: 0.5em;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .cta-btn.secondary-btn:hover {
+            background: #1e3a2a;
+            color: #fff;
+        }
+
+        /* About */
+        .about {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 3rem auto 2rem auto;
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem 2vw;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about h2 {
+            margin-top: 0;
+        }
+
+        .about-img {
+            flex: 1;
+            min-width: 220px;
+            max-width: 320px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-img img {
+            width: 100%;
+            display: block;
+            border-radius: var(--radius);
+        }
+
+        /* Career Prospects */
+        .career {
+            max-width: 1100px;
+            margin: 2.5rem auto;
+        }
+
+        .career h2 {
+            text-align: center;
+        }
+
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .career-card {
+            background: var(--lavender);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2rem 1rem 1.5rem 1rem;
+            text-align: center;
+            transition: transform var(--transition), box-shadow var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 160px;
+            font-weight: 600;
+            font-size: 1.08rem;
+        }
+
+        .career-card:hover {
+            transform: scale(1.04) translateY(-6px);
+            box-shadow: 0 8px 32px rgba(30, 58, 42, 0.13);
+            background: #fff;
+        }
+
+        .career-card .icon {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0.7rem;
+        }
+
+        /* Collaboration */
+        .collab {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            max-width: 700px;
+            margin: 2.5rem auto;
+            text-align: center;
+            padding: 2.5rem 2vw;
+        }
+
+        .collab-logo {
+            height: 54px;
+            margin-bottom: 1rem;
+        }
+
+        .collab .collab-btn {
+            margin-top: 1.2rem;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 22px;
+            padding: 0.7rem 2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background var(--transition), transform var(--transition);
+        }
+
+        .collab .collab-btn:hover {
+            background: var(--cta);
+            transform: scale(1.05);
+        }
+
+        /* Features */
+        .features {
+            max-width: 700px;
+            margin: 2.5rem auto;
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.2rem 2vw;
+        }
+
+        .features h2 {
+            margin-top: 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.08rem;
+            margin-bottom: 1.1rem;
+            color: var(--primary);
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .feature-list li.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-list .tick {
+            color: #43e97b;
+            font-size: 1.3em;
+        }
+
+        /* Fee Table */
+        .fee-section {
+            max-width: 900px;
+            margin: 2.5rem auto;
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.2rem 2vw;
+        }
+
+        .fee-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem 0 1.5rem 0;
+            background: #fff;
+            border-radius: 12px;
+            overflow: auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .fee-table th,
+        .fee-table td {
+            padding: 1.1rem 0.7rem;
+            text-align: center;
+            font-size: 1.01rem;
+        }
+
+        .fee-table th {
+            background: var(--primary);
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .fee-table tr:nth-child(even) {
+            background: #f7fafd;
+        }
+
+        .fee-table tr:nth-child(odd) {
+            background: #fff;
+        }
+
+        .fee-table .fee-highlight,
+        .fee-table tr.fee-highlight td {
+            font-weight: bold;
+            color: var(--cta);
+            background: #f7fafd;
+            font-size: 1.1rem;
+        }
+
+        .fee-note {
+            background: var(--lavender);
+            border-radius: 10px;
+            padding: 1.2rem 1vw;
+            margin-top: 1.2rem;
+            color: var(--primary);
+            font-size: 1.08rem;
+            text-align: center;
+        }
+
+        /* Contact */
+        .contact-section {
+            max-width: 900px;
+            margin: 2.5rem auto;
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.2rem 2vw;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: var(--lavender);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2rem 1rem 1.5rem 1rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 140px;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .contact-card .icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.7rem;
+        }
+
+        .contact-card a {
+            color: var(--cta);
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color var(--transition);
+        }
+
+        .contact-card a:hover {
+            color: var(--primary);
+        }
+
+        .contact-social {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+        }
+
+        .contact-social a {
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: color var(--transition), transform var(--transition);
+        }
+
+        .contact-social a:hover {
+            color: var(--cta);
+            transform: scale(1.15);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 2vw 1.2rem 2vw;
+            margin-top: 2.5rem;
+            border-radius: 0 0 var(--radius) var(--radius);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-img {
+                margin-bottom: 1.5rem;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+
+            .career-grid,
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                z-index: 1200;
+                background: #fff;
+            }
+
+            nav {
+                display: none;
+                position: fixed;
+                top: 64px;
+                /* or your header height */
+                left: 0;
+                width: 100vw;
+                background: #fff;
+                flex-direction: column;
+                align-items: flex-start;
+                box-shadow: 0 4px 16px rgba(30, 58, 42, 0.08);
+                z-index: 1100;
+                padding: 1rem 0;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                padding: 1rem 2rem;
+                border-bottom: 1px solid #eee;
+                color: #1E3A2A;
+                font-size: 1.1rem;
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            .hamburger {
+                display: block;
+                z-index: 1300;
+                /* Make hamburger above nav */
+                background: #fff;
+                border-radius: 8px;
+                padding: 0.2em 0.5em;
+                box-shadow: 0 2px 8px rgba(30, 58, 42, 0.07);
+                border: 1px solid #eee;
+            }
+
+            body {
+                padding-top: 64px;
+                /* Prevent content from hiding under fixed header */
+            }
+
+            .about {
+                padding: 2em 1em 1.5em 1em;
+                font-size: 1em;
+            }
+
+            .hero-content {
+                padding: 5.5em 1.2em 2.5em 1.2em;
+                text-align: center;
+            }
+
+            .hero-content h2 {
+                font-size: 1.2em;
+                margin-bottom: 0.5em;
+            }
+
+            .hero-content .tagline {
+                font-size: 1em;
+                margin-bottom: 1.2em;
+            }
+
+            .cta-btn,
+            .cta-btn.secondary-btn {
+                display: block;
+                width: 100%;
+                margin: 0.5em 0 0 0;
+                box-sizing: border-box;
+                font-size: 1em;
+                padding: 0.9em 0;
+            }
+
+            .cta-btn.secondary-btn {
+                margin-left: 0;
+            }
+
+            .about,
+            .features,
+            .fee-section,
+            .contact-section,
+            .collab {
+                padding: 1.2rem 3vw;
+            }
+
+            .hero-content {
+                padding: 2rem 1vw;
+            }
+
+            .career-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-list li {
+                font-size: 1rem;
+            }
+
+            .fee-table th,
+            .fee-table td {
+                padding: 0.7rem 0.3rem;
+                font-size: 0.98rem;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1rem;
+            }
+
+            .hero-content {
+                padding: 1.2rem 1vw;
+            }
+
+            .about,
+            .features,
+            .fee-section,
+            .contact-section,
+            .collab {
+                padding: 0.7rem 1vw;
+            }
+
+            .feature-list li {
+                font-size: 0.97rem;
+            }
+
+            .fee-table th,
+            .fee-table td {
+                padding: 0.5rem 0.2rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        .cta-btn,
+        .cta-btn.secondary-btn,
+        .collab-btn {
+            text-decoration: none !important;
+        }
+
+        .designer-credit {
+            display: block;
+            font-size: 0.95em;
+            color: #1e3a2a;
+            opacity: 0.7;
+            margin-top: 0.2em;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-content {
+            text-align: center;
+            padding: 1.2em 0 0.5em 0;
+        }
+
+        .designer-credit {
+            color: #e0e0e0;
+            font-size: 1em;
+            margin-top: 0.2em;
+            opacity: 0.85;
+            letter-spacing: 0.02em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-title">
+            <img src="https://images.shiksha.com/mediadata/images/1687785782phpmmSmvn.jpeg" alt="BIT Logo" />
+            <span>BIRLA INSTITUTE OF TECHNOLOGY</span>
+        </div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#career">Careers</a>
+            <a href="#collab">Collaboration</a>
+            <a href="#features">Features</a>
+            <a href="#fee">Fee</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </header>
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Shape Your Future in Business & Finance</h1>
+            <h2>Admissions Open for B.Com (Hons.) & B.Com (Hons. with Research), 2025–26</h2>
+            <div class="tagline">Specialize in Financial Analytics. Graduate with an Industry-Ready Edge.</div>
+            <a href="https://erpportal.bitmesra.ac.in/anon_applRegistrationPage.htm#!" target="_blank"
+                class="cta-btn">Start Your Application</a>
+            <a href="https://drive.google.com/file/d/1QDB4btPnf_auvLjtMP0vWkiMek35V3wr/view?usp=sharing" target="_blank"
+                class="cta-btn secondary-btn" download>Download Brochure</a>
+        </div>
+    </section>
+    <main>
+        <section class="about" id="about">
+            <!-- <div class="about-img">
+                <img src="images/campus-photo.png" alt="Students" />
+            </div> -->
+            <div class="about-text">
+                <h2>About the Programme</h2>
+                <p>
+                    The B.Com (Honours & Honours with Research) at Birla Institute of Technology, Mesra, is a
+                    future-focused undergraduate programme designed to equip students with advanced knowledge in
+                    business, finance, and analytics. In collaboration with NSE Academy, the curriculum blends core
+                    commerce subjects with hands-on training in financial analytics, preparing graduates for high-demand
+                    roles in banking, fintech, capital markets, and more. With a strong emphasis on industry readiness,
+                    internships, and skill enhancement, this programme ensures you graduate with a competitive edge and
+                    the confidence to excel in the evolving world of business.
+                </p>
+            </div>
+        </section>
+        <section class="career" id="career">
+            <h2>Career Prospects</h2>
+            <div class="career-grid">
+                <div class="career-card"><span class="icon"><i class="fas fa-chart-line"></i></span>Financial Analyst
+                </div>
+                <div class="career-card"><span class="icon"><i class="fas fa-hand-holding-usd"></i></span>Investment
+                    Advisory</div>
+                <div class="career-card"><span class="icon"><i class="fas fa-project-diagram"></i></span>Financial
+                    Product Development</div>
+                <div class="career-card"><span class="icon"><i class="fas fa-link"></i></span>Blockchain & Crypto</div>
+                <div class="career-card"><span class="icon"><i class="fas fa-tachometer-alt"></i></span>Algorithmic
+                    Trading/HFT</div>
+                <div class="career-card"><span class="icon"><i class="fas fa-robot"></i></span>WealthTech &
+                    Robo-advisors</div>
+                <div class="career-card"><span class="icon"><i class="fas fa-cogs"></i></span>Financial Operations</div>
+                <div class="career-card"><span class="icon"><i class="fas fa-search"></i></span>Fraud Analytics</div>
+                <div class="career-card"><span class="icon"><i class="fas fa-shield-alt"></i></span>Risk
+                    Management/Actuarial</div>
+            </div>
+        </section>
+        <section class="collab" id="collab">
+            <img src="https://www.nseacademy.info/images/NSE_academy_logo.jpg" alt="NSE Academy Logo" class="collab-logo" />
+            <p>
+                In collaboration with NSE Academy, this programme offers industry-aligned curriculum and practical
+                exposure to financial markets. Learn from top practitioners and gain skills that are highly valued by
+                employers in the finance sector.
+            </p>
+            <a href="https://www.nseindia.com/learn/overview-about-nse-academy" class="collab-btn" target="_blank">Learn
+                More About NSE Academy</a>
+        </section>
+        <section class="features" id="features">
+            <h2>Salient Features</h2>
+            <ul class="feature-list">
+                <li><span class="tick"><i class="fas fa-check-circle"></i></span>Specialization in Financial Analytics
+                </li>
+                <li><span class="tick"><i class="fas fa-check-circle"></i></span>Industry-aligned curriculum with NSE
+                    Academy</li>
+                <li><span class="tick"><i class="fas fa-check-circle"></i></span>Hands-on training: Excel, Python, R
+                </li>
+                <li><span class="tick"><i class="fas fa-check-circle"></i></span>Internships & live projects with top
+                    firms</li>
+                <li><span class="tick"><i class="fas fa-check-circle"></i></span>Modern courses: Financial Modelling,
+                    Algo Trading, Portfolio Analytics</li>
+                <li><span class="tick"><i class="fas fa-check-circle"></i></span>Skill & Ability Enhancement:
+                    Creativity, Writing, Industry Readiness</li>
+                <li><span class="tick"><i class="fas fa-check-circle"></i></span>Mentoring & career counselling
+                    throughout</li>
+            </ul>
+        </section>
+        <section class="fee-section" id="fee">
+            <h2>Fee Structure</h2>
+            <div style="overflow-x:auto;">
+                <table class="fee-table">
+                    <thead>
+                        <tr>
+                            <th>PARTICULARS</th>
+                            <th>1<sup>ST</sup> SEM</th>
+                            <th>2<sup>ND</sup> SEM</th>
+                            <th>3<sup>RD</sup> SEM</th>
+                            <th>4<sup>TH</sup> SEM</th>
+                            <th>5<sup>TH</sup> SEM</th>
+                            <th>6<sup>TH</sup> SEM</th>
+                            <th>7<sup>TH</sup> SEM</th>
+                            <th>8<sup>TH</sup> SEM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tuition Fee (₹)</td>
+                            <td>38000</td>
+                            <td>38000</td>
+                            <td>41500</td>
+                            <td>41500</td>
+                            <td>43500</td>
+                            <td>43500</td>
+                            <td>46500</td>
+                            <td>46500</td>
+                        </tr>
+                        <tr>
+                            <td>Development Fee</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2500</td>
+                            <td>2500</td>
+                            <td>2500</td>
+                            <td>2500</td>
+                        </tr>
+                        <tr>
+                            <td>Exam Fee</td>
+                            <td>8000</td>
+                            <td>8000</td>
+                            <td>8500</td>
+                            <td>8500</td>
+                            <td>9000</td>
+                            <td>9000</td>
+                            <td>9500</td>
+                            <td>9500</td>
+                        </tr>
+                        <tr class="fee-highlight">
+                            <td>Total Fee</td>
+                            <td>48000</td>
+                            <td>48000</td>
+                            <td>52000</td>
+                            <td>52000</td>
+                            <td>55000</td>
+                            <td>55000</td>
+                            <td>58500</td>
+                            <td>58500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="fee-note">
+                Degree after 3 years – ₹3.35 Lakhs; Research after 4 years – ₹4.52 Lakhs
+            </div>
+        </section>
+        <section class="contact-section" id="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <span class="icon"><i class="fas fa-phone-alt"></i></span>
+                    <div>Phone</div>
+                    <a href="tel:+919971020565">+91 9971020565</a>
+                </div>
+                <div class="contact-card">
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
+                    <div>Email</div>
+                    <a href="mailto:admissions@bitmesra.ac.in">admissions@bitmesra.ac.in</a>
+                </div>
+                <div class="contact-card">
+                    <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                    <div>Address</div>
+                    <div>A-7, Sector 1, Noida – 201301 (U.P.)</div>
+                    <a href="https://bitmesra.ac.in" target="_blank">bitmesra.ac.in</a>
+                </div>
+            </div>
+            <div class="contact-social">
+                <a href="https://in.linkedin.com/company/bit-noida-campus" target="_blank" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/BITMesraNoidaCampus/" target="_blank" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/bitnoidacampus" target="_blank" aria-label="Twitter"><i
+                        class="fab fa-twitter"></i></a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div>
+                &copy; 2025 Birla Institute of Technology, Noida. All Rights Reserved.
+            </div>
+            <div class="designer-credit">Designed by Yash Kumar Singh</div>
+        </div>
+    </footer>
+    <script>
+        // Hamburger menu for mobile
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^=\"#\"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    if (window.innerWidth <= 768) nav.classList.remove('show');
+                }
+            });
+        });
+        // Scroll-triggered fade-in for features
+        const featureItems = document.querySelectorAll('.feature-list li');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        featureItems.forEach(item => observer.observe(item));
+        // Fee table horizontal scroll hint (optional)
+        const feeTable = document.querySelector('.fee-table');
+        if (feeTable && window.innerWidth < 768) {
+            feeTable.style.minWidth = '600px';
+        }
+    </script>
+</body>
+
+</html>
